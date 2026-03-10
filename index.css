@@ -28,6 +28,15 @@ button:hover {
 button:focus {
     outline: 0;
 }
+
+input {
+    background: none;
+    font-family: monospace;
+    border: 1px solid #EEE;
+    color: #EEE;
+    cursor: pointer;
+}
+
 a {
     font-size: 13px;
     text-align: center;
