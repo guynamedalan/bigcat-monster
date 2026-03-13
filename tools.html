@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>userchecker</title>
+        <title>tools</title>
         <link rel="stylesheet" href="index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/images/images.ico">
     </head>
     <style>
         .fish {
@@ -16,7 +17,7 @@
             transform: translate(-50%, -50%);
             padding-bottom: 50px;
         }
-        @keyframes spin1 { 0.01% { transform:scale(8, 8); } }
+        @keyframes spin1 { 0.01% { transform:scale(8, 8) } }
     </style>
     <script>
         function goto(web) {
@@ -25,6 +26,9 @@
         function fishJumpscare() {
             document.getElementById('hola').style.animation = "spin1 999s linear infinite"
             document.getElementById('hola').removeAttribute("hidden")
+            var audio = new Audio('audio/alarm.mp3');
+            audio.loop = true
+            audio.play();
         }
     </script>
     <body class="main"> 
@@ -39,7 +43,7 @@
             <!-- <b> //============\\ </b> <br><br> -->
             
             <a onclick="goto('/user.html')">userchecker</a><br>
-            <a onclick="fishJumpscare()">fish</a><br>
+            <a onclick="fishJumpscare()">fish jumpscare</a><br>
 
             <!-- <br><br> <b> \\============// </b> -->
         </div>

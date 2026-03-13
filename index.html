@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>:P</title>
+        <title>main</title>
         <link rel="stylesheet" href="index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/images/images.ico">
         <meta name="next-head-count" content="0">
         
         <meta property="og:type" content="article">
@@ -17,6 +18,15 @@
         <meta name="theme-color" content="#FF0000">
     </head>
     <script>
+        function anim() {
+            document.getElementById('wow').style.animation = "spin1 ease-out 0.5s"
+        }
+        function play(audio, loop, volume) {
+            var audiov = new Audio(audio);
+            audiov.loop = loop
+            audiov.volume = volume <!-- max is 1 -->
+            audiov.play();
+        }
         function copy(text) {
             navigator.clipboard.writeText(text);
         }
@@ -24,10 +34,14 @@
             window.location.replace(web)
         }
     </script>
+    <style>
+        @keyframes spin1 { 33% { transform:rotate(2deg) } 66% { transform:rotate(-2deg) } 99% { transform:rotate(0deg) } }
+    </style>
     <body class="main"> 
         <div class="bg"></div>
         <div class='center glow tex2'>
-            <img src='images/3076974rxdeyjqrk6.gif'><br>
+            
+            <img id="wow" onclick="play('audio/meow-1.mp3', false, 0.3); anim()" src='images/3076974rxdeyjqrk6.gif'><br>
             <b>idk</b> <br>
             <br>
             <b>python, java, lua(u), c/c++, c# and (node.)js </b> <br>
