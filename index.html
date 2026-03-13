@@ -19,6 +19,9 @@
     </head>
     <script>
         function anim() {
+            const elm = document.getElementById('wow');
+            var newone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(newone, elm);
             document.getElementById('wow').style.animation = "spin1 ease-out 0.5s"
         }
         function play(audio, loop, volume) {
