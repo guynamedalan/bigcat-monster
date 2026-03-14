@@ -18,17 +18,24 @@
         <meta name="theme-color" content="#FF0000">
     </head>
     <script>
-        function anim() {
-            const elm = document.getElementById('wow');
-            var newone = elm.cloneNode(true);
-            elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('wow').style.animation = "spin1 ease-out 0.3s"
-        }
+        var count = 0;
         function play(audio, loop, volume) {
             var audiov = new Audio(audio);
             audiov.loop = loop
             audiov.volume = volume <!-- max is 1 -->
             audiov.play();
+        }
+        function anim() {
+            
+            const elm = document.getElementById('wow');
+            var newone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(newone, elm);
+            document.getElementById('wow').style.animation = "spin1 ease-out 0.3s"
+            count=count+1
+            if (count == 10) {
+                document.getElementById('bafd').removeAttribute("hidden")
+                play("audio/roblox-explosion-sound.mp3", true, 0.5)
+            }
         }
         function copy(text) {
             navigator.clipboard.writeText(text);
@@ -40,7 +47,7 @@
     <body class="main"> 
         <div class="bg"></div>
         <div class='center glow tex2'>
-            
+            <img class="center" hidden id="bafd" src="images/explosion-deltarune2.gif" width="500" height="400"></img>
             <img id="wow" onclick="play('audio/meow-1.mp3', false, 0.3); anim()" src='images/3076974rxdeyjqrk6.gif'><br>
             <b>idk</b> <br>
             <br>
@@ -50,7 +57,7 @@
         </div>
 
         <div class='top'>
-            <b>| <a href="/index.html">main</a> | <a href="/blog.html">blog</a> | <a href="/tools.html">tools</a> |</b>
+            <b>| <a href="/index.html">main</a> | <a href="/blog.html">blog</a> | <a href="/tools.html">stuff</a> |</b>
         </div>
     </body>
 </html>
